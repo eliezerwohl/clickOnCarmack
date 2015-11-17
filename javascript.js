@@ -1,26 +1,29 @@
-// var john = document.getElementsByClassName("john");
-
-// john.addEvent("click, hooray");
-
-// function hooray() {
-//   prompt('hey soul sister');
-// 
-
-// document.getElementsByClassName("john").addEventListener("click", prompt("got it"));
-
-
-
 // get all of the delete buttons
-var john = document.getElementsByClassName("john");
 
 
-// loop over delete buttons and add event listener
-for(i = 0; i < john.length; i++){
-  john[i].addEventListener("click", hello);
+document.getElementById("myBtn").addEventListener("click", countdown);
+function countdown() {
+setTimeout(function(){ 
+prompt("you click on" + " " + counter + " " + "heads");   
+}, 20000);
+
+}
+
+var counter = 0;
+function countup() {
+counter = counter + 1;
 }
 
 
-// function to delete row
-function hello(){
-  prompt('sure plays a mean');
+function handleClick(e)
+{
+    countup();
+    e.target.removeEventListener('click', handleClick);
 }
+
+var images = document.querySelectorAll('img'); 
+for (var i = 0; i < images.length; i++) 
+{
+    images[i].addEventListener('click', handleClick);
+}
+
