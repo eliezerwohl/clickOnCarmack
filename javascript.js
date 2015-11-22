@@ -15,7 +15,7 @@ counter = counter + 1;
 }
 
 
-function handleClick(e)
+function handleClick(e)  //e = event
 {
     countup();
     e.target.removeEventListener('click', handleClick);
